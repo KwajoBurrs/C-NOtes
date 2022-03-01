@@ -1,5 +1,7 @@
 
-
+//This program takes a file called potentials.txt that holds customer information
+//then it asks a seriies of questions for a representative to ask and answer while on the phone
+//after answering the qestions the outcome or info from the interaction is stored in a file called confirmed.txt
 
 #include <cstdlib>
 #include <iostream>
@@ -26,15 +28,14 @@ int main(int argc, char *argv[])
 	ofstream outfile;
 	outfile.open("confirmed.txt",ios::app);
 	
-	//declare variables up here
     
     
-    while (!file.eof()) //while it is not the end of the potentials file
+    while (!file.eof()) //while it is not the end of the potentials file  //while the file is not completed its process of being read
     {
           
-        file >> status >> firstname >> lastname >> phonenumbers;
+        file >> status >> firstname >> lastname >> phonenumbers;  //input the contents pf the file in this order into the program
         
-        if (status == 'X')
+        if (status == 'X')  //if the charachter that is first is an X continue here
 		{
 			cout << firstname << lastname << " will have an interest rate of 7.9%" << " contact them at " << phonenumbers << endl;
 			
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
 			cin >> acceptance;
 			cin.ignore();
 			
-			if (acceptance == 'A' || acceptance == 'a')
+			if (acceptance == 'A' || acceptance == 'a') 
 			{
 				cout << "Ask for an address to send the card to" << endl; 
 				
@@ -130,12 +131,10 @@ int main(int argc, char *argv[])
 		}
 		
 		
-		  //read one potential customer here
-          //process that customer
-          //if they accept the card, write them out to the other file
+
     }
     
-    //close both files
+
     
     system("PAUSE");
     return EXIT_SUCCESS;
