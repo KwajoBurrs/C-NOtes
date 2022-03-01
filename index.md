@@ -13,6 +13,8 @@ This is a collection of differnt c++ notes in the form of mini programs.  It dis
 
 *italicized text*
 
-`code`
+`
+code
+`
 
 ---
