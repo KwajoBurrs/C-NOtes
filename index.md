@@ -13,15 +13,14 @@ This is a collection of differnt c++ notes in the form of mini programs.  It dis
 
 *italicized text*
 
-`
-    while (!file.eof()) //while it is not the end of the potentials file
+
+    `while (!file.eof()) //while it is not the end of the potentials file
     {
           
         file >> status >> firstname >> lastname >> phonenumbers;
         
         if (status == 'X')
 		{
-			cout << firstname << lastname << " will have an interest rate of 7.9%" << " contact them at " << phonenumbers << endl;
-`
+			cout << firstname << lastname << " will have an interest rate of 7.9%" << " contact them at " << phonenumbers << endl;`
 
 ---
