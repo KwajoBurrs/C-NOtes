@@ -1,0 +1,142 @@
+`
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <string>
+
+
+using namespace std;
+
+
+
+int main(int argc, char *argv[])
+{
+	
+	
+	char status, acceptance, next;
+	int interestrate;
+	string firstname, lastname, phonenumbers, address;
+	
+	//declare a file handler
+	//open both files here
+	ifstream file;
+	file.open("potentials.txt");
+	ofstream outfile;
+	outfile.open("confirmed.txt",ios::app);
+	
+	//declare variables up here
+    
+    
+    while (!file.eof()) //while it is not the end of the potentials file
+    {
+          
+        file >> status >> firstname >> lastname >> phonenumbers;
+        
+        if (status == 'X')
+		{
+			cout << firstname << lastname << " will have an interest rate of 7.9%" << " contact them at " << phonenumbers << endl;
+			
+			cout << "Enter 'A' to accept the card" << endl;
+			
+			cout << "Enter 'D' to decline the card" << endl;
+			
+			
+			cin >> acceptance;
+			cin.ignore();
+			
+			if (acceptance == 'A' || acceptance == 'a')
+			{
+				cout << "Ask for an address to send the card to" << endl; 
+				
+				cout << "What is their address?" << endl;
+				
+				getline(cin, address);
+				
+				outfile << status << " " << firstname << " " << lastname << " " << address << endl;
+				
+				cout << "Say 'Thank you for your time, you can expect the card soon, happy charging'" << endl;
+				
+				cin.ignore();
+				
+				
+			}
+			
+			else if (acceptance == 'D' || acceptance == 'd')
+			{
+				cout << "Ask the customer wpuld like to 50 percent cash back on all purchases in the first month."  <<  endl;
+				
+				cout << "If so they should reach out to '4049867327" << endl;
+				
+				cin.ignore();
+
+			}
+			
+			else 
+			{
+				cout << "System error.  Restart program!!" << endl;
+			}
+		}
+		else if (status != 'X')
+		{
+			cout << firstname << lastname << " will have an interest rate of 12.9%" << " contact them at " << phonenumbers << endl;
+			cout << "Enter 'A' to accept the card" << endl;
+			
+			cout << "Enter 'D' to decline the card" << endl;
+			
+			
+			cin >> acceptance;
+			cin.ignore();
+			
+			if (acceptance == 'A' || acceptance == 'a')
+			{
+				cout << "Ask for an address to send the card to" << endl; 
+				
+				cout << "What is their address?" << endl;
+				
+				getline(cin, address);
+				
+				outfile << status << " " << firstname << " " << lastname << " " << address << endl;
+				
+				cout << "Say 'Thank you for your time, you can expect the card soon, happy charging'" << endl;
+				
+				cin.ignore();	
+			}
+			
+			else if (acceptance == 'D' || acceptance == 'd')
+			{
+				cout << "Ask the customer wpuld like to 50 percent cash back on all purchases in the first month."  <<  endl;
+				
+				cout << "If so they should reach out to '4049867327" << endl;
+				
+				cin.ignore();
+				
+			}
+			
+			else 
+			{
+				cout << "System error.  Restart program!!" << endl;
+				
+				cin.ignore();
+			}
+		
+		}
+		else
+		{
+			cout << "System error.  Restart program!!" << endl;
+			
+			cin.ignore();
+		}
+		
+		
+		  //read one potential customer here
+          //process that customer
+          //if they accept the card, write them out to the other file
+    }
+    
+    //close both files
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}
+`
+
